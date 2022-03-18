@@ -20,7 +20,7 @@ typedef struct { float x, y, z, vx, vy, vz; } Body;
 
 __global__ void bodyForce(Body *p, float dt, int n) {
 
-  int idx = blodDim.x*blockIdx.x + threadIdx.x;
+  int idx = blockDim.x*blockIdx.x + threadIdx.x;
 
   if ( idx < n ) {
 
