@@ -122,7 +122,7 @@ int main(const int argc, const char** argv) {
          * Also, the next round of `bodyForce` cannot begin until the integration is complete.
          */
 
-	integratePosition<<<number_of_blocks, threads_per_block>>>(p, dt, nBodies);
+	integrate_position<<<number_of_blocks, threads_per_block>>>(p, dt, nBodies);
 	cudaDeviceSynchronize();
 
         const double tElapsed = GetTimer() / 1000.0;
