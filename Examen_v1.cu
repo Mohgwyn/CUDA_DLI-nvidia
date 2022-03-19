@@ -98,7 +98,7 @@ int main(const int argc, const char** argv) {
     double totalTime = 0.0;
 
     int threads_per_block = 256;
-    int number_of_blocks((nBodies/threads_per_block)+1);
+    int number_of_blocks = (nBodies/threads_per_block)+1;
   
     /*
      * This simulation will run for 10 cycles of time, calculating gravitational
